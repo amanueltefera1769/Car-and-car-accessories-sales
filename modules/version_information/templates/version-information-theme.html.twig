@@ -1,0 +1,33 @@
+<div class="version-information-container">
+  {% if items %}
+    {% for item in items %}
+      <div class="version-info-general-info__item">
+        <span class="version-info-general-info__item-icon version-info-general-info__item-icon--{{ item.type }}"></span>
+        <div class="version-info-general-info__item-value">
+          {% if item.label %}
+            <div class="version-info-general-info__item-title">
+              <strong>{{ item.label }}</strong>
+            </div>
+          {% endif %}
+          <div class="version-info-general-info__item-value-value">
+            {% if item.value.value %}
+              {{ item.value.value }}
+            {% elseif item.value.version.value is defined and item.value.system.value is defined %}
+              {{ item.value.version.value }}
+              {{ item.value.system.value }}
+            {% else %}
+              {{ item.value }}
+            {% endif %}
+          </div>
+          {% if item.value.description %}
+            <div class="version-info-general-info__item-value-description">
+              {{ item.value.description }}
+            </div>
+          {% endif %}
+        <!--/version-info-general-info__item-value-->
+        </div>
+      <!--/version-info-general-info__item-->
+      </div>
+    {% endfor %}
+  {% endif %}
+</div>

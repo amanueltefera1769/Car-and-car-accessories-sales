@@ -1,0 +1,4 @@
+services:
+  version_information.manager:
+    class: Drupal\version_information\VersionInformationManager
+    arguments: ['@system.manager', '@module_handler']

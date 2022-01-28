@@ -1,0 +1,56 @@
+<?php
+
+/**
+ * @file
+ * Contains hook implementations for Version Information.
+ */
+
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_toolbar().
+ */
+function version_information_toolbar() {
+  if (\Drupal::currentUser()->hasPermission('use version information')) {
+    $items['version_information'] = [
+      '#type' => 'toolbar_item',
+      '#wrapper_attributes' => [
+        'class' => ['version-information-toolbar-tab'],
+      ],
+      'tab' => [
+        '#type' => 'link',
+        '#title' => 'Version Information',
+        '#url' => Url::fromRoute('version_information.status_report'),
+        '#attributes' => [
+          'class' => [
+            'use-ajax',
+            'toolbar-icon',
+            'toolbar-icon-version-information',
+          ],
+          'data-dialog-type' => 'dialog',
+          'data-dialog-renderer' => 'off_canvas',
+        ],
+      ],
+      '#attached' => [
+        'library' => [
+          'version_information/styling',
+        ],
+      ],
+    ];
+
+    return $items;
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function version_information_theme($existing, $type, $theme, $path) {
+  return [
+    'version_information_theme' => [
+      'variables' => [
+        'items' => [],
+      ],
+    ],
+  ];
+}

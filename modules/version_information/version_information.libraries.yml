@@ -1,0 +1,8 @@
+styling:
+  js:
+    js/version_information.js: {}
+  css:
+    theme:
+      css/version_information.css: {}
+  dependencies:
+    - core/drupal.dialog.off_canvas

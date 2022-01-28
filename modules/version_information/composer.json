@@ -1,0 +1,21 @@
+{
+    "name": "drupal/version_information",
+    "description": "Provides a frontend sidebar with version information.",
+    "type": "drupal-module",
+    "license": "GPL-2.0-or-later",
+    "homepage": "https://www.drupal.org/project/version_information",
+    "authors": [
+        {
+            "name": "Neslee Canil Pinto",
+            "homepage": "https://www.drupal.org/u/neslee-canil-pinto",
+            "role": "Maintainer"
+        }
+    ],
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/version_information",
+        "source": "https://git.drupalcode.org/project/version_information"
+    },
+    "require": {
+        "drupal/core": "^8 || ^9"
+    }
+}

@@ -1,0 +1,6 @@
+version_information.status_report:
+  path: '/version_information'
+  defaults:
+    _controller: '\Drupal\version_information\Controller\VersionInformationController::status'
+  requirements:
+    _permission: 'use version information'
